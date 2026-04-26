@@ -38,51 +38,6 @@ Surveyed pre-processing, in-processing, and post-processing bias mitigation tech
 
 ---
 
-## Repository Structure
-
-```
-facial-recognition-bias/
-│
-├── 📁 data/
-│   ├── 📁 benchmark_datasets/
-│   │   ├── lfw_sample/                  # Labeled Faces in the Wild (subset)
-│   │   ├── fairface_sample/             # FairFace balanced demographic sample
-│   │   ├── rfw_sample/                  # Racial Faces in the Wild (4 groups)
-│   │   ├── bfw_sample/                  # Balanced Faces in the Wild
-│   │   └── dataset_composition.csv      # Demographic breakdown across all datasets
-│   │
-│   ├── 📁 criminal_justice/
-│   │   ├── compas.db                    # ProPublica COMPAS SQLite database
-│   │   ├── compas_scores_raw.csv        # Raw COMPAS scores with demographics
-│   │   └── compas_two_year_recid.csv    # Two-year recidivism outcomes
-│   │
-│   └── 📁 provenance/
-│       ├── dataset_funding_sources.csv  # Funding lineage of benchmark datasets
-│       └── surveillance_connections.md  # Documented links to defence/surveillance applications
-│
-├── 📁 notebooks/
-│   ├── 01_benchmark_eda.ipynb           # Demographic composition analysis across datasets
-│   ├── 02_compas_analysis.ipynb         # Reproducing ProPublica bias analysis (Python)
-│   ├── 03_impossibility_theorem.ipynb   # Empirical demonstration of fairness trade-offs
-│   ├── 04_fr_demographic_eval.ipynb     # FR model evaluation across demographic groups
-│   └── 05_mitigation_experiments.ipynb  # AIF360 adversarial debiasing & threshold adjustment
-│
-├── 📁 src/
-│   ├── demographic_classifier.py        # Fitzpatrick skin tone classification utility
-│   ├── fairness_metrics.py              # Equalised odds, predictive parity, demographic parity
-│   └── bias_audit.py                    # Disaggregated FPR/FNR evaluation pipeline
-│
-├── 📁 outputs/
-│   ├── figures/                         # Charts and visualisations from EDA
-│   └── results/                         # Metric outputs from mitigation experiments
-│
-├── requirements.txt
-├── .env.example
-└── README.md
-```
-
----
-
 ## Current Research Findings
 
 ### Finding 1: The Benchmark-to-Deployment Gap
